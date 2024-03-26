@@ -1,18 +1,21 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
+import Services from "../components/services.astro";
+import Features from "../components/consultation.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
+import About from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
+import Counselors from "~/components/counselor.astro"
 import "~/styles/index.css";
+import Consultation from "../components/consultation.astro";
+
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+//const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "Essence of You Counseling and Consulting, LLC. Get in-person or online therapy";
 ---
 
 <!doctype html>
@@ -23,16 +26,14 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Astro Landing Page</title>
+    <title>Essence of You Counseling & Consulting</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
     <meta property="og:title" content="Astro" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- initialize theme -->
     <script is:inline>
@@ -59,16 +60,37 @@ const description =
     </script>
   </head>
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+      class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary bg-repeat selection:text-white"
   >
     <Header />
     <Splash />
     <div class="space-y-24 px-8 py-32">
       <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
+      <Services />
+      <About />
+      <Counselors />
+      <Consultation/>
     </div>
     <Footer />
   </body>
 </html>
+<script is:inline>
+  //change theme static
+  const bod = document.body.classList;
+  const conImg = document.querySelector('#consultingImg').classList;
+  const serImg = document.querySelector('#serviceImg').classList;
+  const strImg = document.querySelector('#starfield').classList;
+
+  if (document.documentElement.dataset.theme === "dark"){
+      bod.toggle("bg-dark");
+      serImg.toggle("md:mix-blend-lighten");
+      conImg.toggle("md:mix-blend-lighten");
+      strImg.toggle("mix-blend-lighten");
+  }
+  else{
+    bod.toggle("bg-light");
+    serImg.toggle("md:mix-blend-darken");
+    conImg.toggle("md:mix-blend-darken");
+    strImg.toggle("mix-blend-darken");
+  }
+</script>

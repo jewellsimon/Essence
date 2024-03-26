@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import Alisha from "~/assets/Alisha.png";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<section class="bg-offset drop-shadow-2xl">
+  <div id="alishaIntro"></div>
+  <div class="grid place-items-center gap-2 p-6 h-auto grid-cols-1 md:grid-cols-3 md:gap-10">
+    <div class="col-span-2 justify-items-start">
+      <h2 class="gradient-text text-left font-bold font-quicksand tracking-tighter text-6xl pb-4">
+        Alisha Diggs, Ph.D, LPC-S
+      </h2>
+      <span class="font-quicksand text-2xl">
+        Welcome to a space where your journey toward a brighter tomorrow begins! As a licensed professional counselor in Louisiana, I bring 12 years of experience to our sessions. For me, counseling isn't just about problem-solving; it's a beautiful dance of understanding, trust, and growth. Together, we'll embark on this journey as partners, exploring your present challenges and crafting a vision for the life you deserve. And if you're part of the LGBTQ+ or BIPOC community, know that this space is not only inclusive but celebratory of your identity. In our counseling space, your thoughts and feelings take center stage. I'm here to listen, support, and guide you through the twists and turns of your unique story with unwavering respect, sensitivity, and compassion. Every step of the way, your needs and goals will drive our conversations. Because let's face it, there's no one-size-fits-all solution to life's complexities! Whether you're grappling with stress, navigating relationships, or simply seeking a little extra motivation, consider me your dedicated ally. So, take that courageous step towards a brighter, happier tomorrow. I'll be here, cheering you on every step of the way. Together, let's unlock the potential for growth, healing, and joy in your life!
+      </span>
+    </div>
+    <div id="Alisha" class="h-full w-full font-quicksand">
+      <div class="p-0 bg-gradient-to-b from-primary from-20% via-transparent via-90% ">
+        <Image
+          class="p-0"
+          src={Alisha}
+          widths={widths}
+          sizes={sizes}
+          alt="photo of Dr. Alisha Diggs. She is in a yellow dress and has beatiiful small locs a pretty smile"
+          loading="lazy"
+          decoding="async"
+        />
+        <br />
+        <div class="text-l bg-offset text-center">
+          Areas of Focus:
+        </div>
+        <ul class="list-inside list-disc">
+          <li class="px-4">Stress/Anxiety</li>
+          <li class="px-4">Depression</li>
+          <li class="px-4">Relationships</li>
+          <li class="px-4">Self Esteem/Self Love</li>
+          <li class="px-4">Motivation</li>
+          <li class="px-4">LGBTQ+</li>
+          <li class="px-4">Family conflicts</li>
+          <li class="px-4">Intimacy-related issues</li>
+          <li class="px-4">Parenting issues</li>
+          <li class="px-4">Coping with life changes</li>
+          <li class="px-4">Compassion fatigue</li>
+          <li class="px-4">Blended Family Issues</li>
+          <li class="px-4">Codependency</li>
+          <li class="px-4">Commitment Issues</li>
+          <li class="px-4">Divorce and Separation</li>
+          <li class="px-4">Family of Origin Issues</li>
+          <li class="px-4">Family Problems</li>
+          <li class="px-4">Polyamory / Nonmonogamous Relationships</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -47,11 +47,42 @@ import { Icon } from "astro-icon/components";
       ?.classList.remove("hidden");
   };
 
+  const staticUpdate = ()=>{
+      //change theme static
+      const bod = document.body.classList;
+      const con = document.querySelector("#consultingImg").classList;
+      const ser = document.querySelector("#serviceImg").classList;
+      const str = document.querySelector('#starfield').classList;
+      const blendImages = [con,ser];
+
+      if (document.documentElement.dataset.theme === "dark"){
+          bod.toggle("bg-dark",true);
+          bod.toggle("bg-light", false);
+          blendImages.forEach(img =>{
+            img.toggle("md:mix-blend-lighten",true);
+            img.toggle("md:mix-blend-darken",false);
+          });
+          str.toggle("mix-blend-lighten",true);
+          str.toggle("mix-blend-darken",false);
+          }
+      if (document.documentElement.dataset.theme === "light"){
+          bod.toggle("bg-dark", false);
+          bod.toggle("bg-light", true);
+          blendImages.forEach(img => {
+            img.toggle("md:mix-blend-darken", true);
+            img.toggle("md:mix-blend-lighten", false);
+          });
+          str.toggle("mix-blend-darken", true);
+          str.toggle("mix-blend-lighten", false);
+          }
+      }
+
   button.addEventListener("click", () => {
     const themeNext = getThemeNext();
     document.documentElement.dataset.theme = themeNext;
     localStorage.setItem("theme", themeNext);
     updateIcon();
+    staticUpdate();
   });
 
   updateIcon();
@@ -62,3 +93,4 @@ import { Icon } from "astro-icon/components";
     @apply ml-0 scale-100;
   }
 </style>
+

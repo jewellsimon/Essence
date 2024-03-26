@@ -1,0 +1,103 @@
+---
+import CompatibilityList from "~/components/compatibility-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { CompatibilityItem } from "~/types";
+
+const frameworks: Array<CompatibilityItem> = [
+  {
+    title: "Adult Individual Counseling",
+    icon: "mdi:person",
+    cost: "$150/session",
+  },
+  {
+    title: "Couples Counseling",
+    icon: "mdi:people-outline",
+    cost: "$180/session",
+  },
+  {
+    title: "Free Group Therapy",
+    icon: "mdi:people-group",
+    cost: "$30 to non-clients/session",
+  },
+];
+
+const platforms: Array<CompatibilityItem> = [
+  {
+    title: "Individual Supervision",
+    icon: "mdi:notebook",
+    cost: "$85 weekly, $350 monthly",
+  },
+  {
+    title: "Group Supervision(50hrs max)",
+    icon: "mdi:notebook-multiple",
+    cost: "$250 monthly*",
+  },
+  {
+    title: "Workshops and Guided Training",
+    icon: "mdi:account-box-multiple",
+    cost: "Submit inquiry",
+  },
+];
+---
+
+<ContentSection title="Services & Rates" id="Services">
+  <div class="grid grid-cols-3 md:gap-6 pb-6">
+    <div class="col-span-3 md:col-span-2">
+      <section class="font-quicksand text-2xl">
+        Our <span class="text-primary">100% teletherapy services</span> are currently
+        offered on a private pay basis as we do not accept insurance at the moment. However,
+        we are happy to provide detailed bills that you can submit for reimbursement
+        as an out-of-network provider.
+        <br /><br />
+        <span class="text-primary">Professional Mental Health Therapy:</span>
+        <br />
+        Our services cater to the mental health and well-being needs of individuals from diverse populations and backgrounds, such as professionals, entrepreneurs, educators, first responders, healthcare providers, creatives, parents, students, and community leaders to offer support and strategies for navigating relationships, managing stress, depression, grief, family conflict, workplace challenges, and identity matters, and achieving personal and professional growth.
+      </section>
+    </div>
+    <div id="serviceImg" class="
+     invisible
+     inset-0
+     md:visible
+     md:max-w-full
+     md:min-h-full
+     md:col-span-1
+     md:bg-cover
+     md:bg-center
+     md:bg-no-repeat
+     md:bg-[url('/teleheaalth.png')]
+     ">
+    </div>
+  </div>
+  <CompatibilityList
+    items={frameworks}
+    title="Professional Mental Health Services"
+    cost={frameworks.values()}
+  />
+  <div class="grid grid-cols-3 md:gap-6 pb-6">
+    <div id="consultingImg" class="
+     invisible
+     inset-0
+     md:visible
+     md:max-w-full
+     md:min-h-full
+     md:col-span-1
+     md:bg-cover
+     md:bg-right
+     md:bg-no-repeat
+     md:bg-[url('/counseling.webp')]
+     ">
+    </div>
+    <div class="col-span-3 md:col-span-2">
+      <section class="font-quicksand text-2xl">
+        <span class="text-primary font-quicksand text-2xl">Supervision & Consultation:</span>
+        <br />
+        Our services provide a supportive and empowering clinical supervision space for provisional licensed professional counselors to obtain resources tailored to their professional roles and goals, allowing them to obtain the 100 supervision hours required for licensure. Additionally, our consulting services cater to mental health professionals who may seek peer support, professional development opportunities, and resources to enhance their cultural competence and effectiveness when working with diverse populations.
+      </section>
+    </div>
+  </div>
+  <CompatibilityList
+    items={platforms}
+    title="Supervision & Consultation"
+    cost={frameworks.values()}
+  />
+</ContentSection>

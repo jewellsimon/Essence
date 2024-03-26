@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        quicksand: "quicksand, sans, serif"
       },
       colors: {
         primary: "var(--color-primary)",
@@ -22,6 +23,10 @@ module.exports = {
       borderColor: {
         default: "var(--color-border)",
       },
+      backgroundImage:{
+        dark: "url('/textureToo.png')",
+        light:"url('/texture.png')",
+      }
     },
   },
   corePlugins: {
