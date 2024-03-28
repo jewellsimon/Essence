@@ -35,8 +35,8 @@ import HeroImage from "~/components/hero-image.astro";
         Have questions or would like to schedule an appointment?
     </section>
     <form
-            netlify
-            netlify-honeypot="bot-field"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
             name="contact"
             method="POST"
             action="/success"
@@ -49,11 +49,6 @@ import HeroImage from "~/components/hero-image.astro";
                         Don’t fill this out if you’re human: <input name="bot-field" />
                     </label>
                 </p>
-                <input
-                        type="hidden"
-                        name="subject"
-                        value="Site inquiry from essenceofyou.netlify.app"
-                />
                 <label
                         class="mb-2 block font-bold uppercase tracking-wide text-offset text-xs"
                         for="grid-first-name"
