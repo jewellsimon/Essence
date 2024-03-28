@@ -1,28 +1,44 @@
 ---
-import HeroImage from "../components/hero-image.astro";
+import {Image} from "astro:assets";
+import logo from "../assets/logos.png";
 import "~/styles/index.css";
 ---
-<div class="relative">
-    <div class="absolute inset-0 overflow-hidden opacity-20">
-        <HeroImage/>
-    </div>
-    <div class="sticky top-0 h-screen flex flex-col items-center justify-center">
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Essence Of You LLC. Inquiry Received</title>
+</head>
+<body
+        class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary bg-dark selection:text-white p-4"
+>
+<div class="relative text-default text-base">
+
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-evenly">
         <h2 class="text-4xl text text-center">
-            Success our offices have received your request<br />
-            Thank you for your Interest
-            <br/>
+            Thank You.<br />
+            Our offices have received your request<br />
+            Keep an eye out for our reply
         </h2>
-        <p>Scroll Down</p>
+        <p class="">Scroll Down</p>
     </div>
-    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-indigo-600 text-white">
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-evenly bg-dark bg-indigo-600">
         <h2 class="text-4xl">additional kind info</h2>
         <p>Scroll Down</p>
     </div>
-    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-purple-600 text-white">
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-evenly bg-dark bg-purple-600">
         <h2 class="text-4xl">health and well-being</h2>
         <p>Scroll Down</p>
     </div>
-    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-neutral-800 text-white">
-        <h2 class="text-4xl">logo</h2>
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-evenly bg-dark bg-neutral-800">
+        <Image
+                slot="startLogo"
+                class="w-3/5"
+                src={logo}
+                loading="eager"
+                alt="essence of you logo, an african violet"
+        />
     </div>
 </div>
+</body>
