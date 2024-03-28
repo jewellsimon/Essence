@@ -1,0 +1,28 @@
+---
+import HeroImage from "../components/hero-image.astro";
+import "~/styles/index.css";
+---
+<div class="relative">
+    <div class="absolute inset-0 overflow-hidden opacity-20">
+        <HeroImage/>
+    </div>
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center">
+        <h2 class="text-4xl text text-center">
+            Success our offices have received your request<br />
+            Thank you for your Interest
+            <br/>
+        </h2>
+        <p>Scroll Down</p>
+    </div>
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-indigo-600 text-white">
+        <h2 class="text-4xl">additional kind info</h2>
+        <p>Scroll Down</p>
+    </div>
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-purple-600 text-white">
+        <h2 class="text-4xl">health and well-being</h2>
+        <p>Scroll Down</p>
+    </div>
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center bg-neutral-800 text-white">
+        <h2 class="text-4xl">logo</h2>
+    </div>
+</div>
