@@ -82,14 +82,14 @@ const description =
 
   if (document.documentElement.dataset.theme === "dark"){
       bod.toggle("bg-dark");
-      serImg.toggle("md:mix-blend-lighten");
-      conImg.toggle("md:mix-blend-lighten");
+      serImg.toggle("mix-blend-lighten");
+      conImg.toggle("mix-blend-lighten");
       strImg.toggle("mix-blend-lighten");
   }
   else{
     bod.toggle("bg-light");
-    serImg.toggle("md:mix-blend-darken");
-    conImg.toggle("md:mix-blend-darken");
+    serImg.toggle("mix-blend-darken");//removed md for flex service images
+    conImg.toggle("mix-blend-darken");
     strImg.toggle("mix-blend-darken");
   }
 </script>
