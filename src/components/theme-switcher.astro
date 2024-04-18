@@ -69,7 +69,7 @@ import { Icon } from "astro-icon/components";
           bod.toggle("bg-dark", false);
           bod.toggle("bg-light", true);
           blendImages.forEach(img => {
-            img.toggle("mix-blend-darken", true);
+            img.toggle("mix-blend-darken", true);//removed md: due to flexbox
             img.toggle("mix-blend-lighten", false);
           });
           str.toggle("mix-blend-darken", true);
