@@ -59,8 +59,8 @@ import { Icon } from "astro-icon/components";
           bod.toggle("bg-dark",true);
           bod.toggle("bg-light", false);
           blendImages.forEach(img =>{
-            img.toggle("md:mix-blend-lighten",true);
-            img.toggle("md:mix-blend-darken",false);
+            img.toggle("mix-blend-lighten",true);
+            img.toggle("mix-blend-darken",false);
           });
           str.toggle("mix-blend-lighten",true);
           str.toggle("mix-blend-darken",false);
@@ -69,8 +69,8 @@ import { Icon } from "astro-icon/components";
           bod.toggle("bg-dark", false);
           bod.toggle("bg-light", true);
           blendImages.forEach(img => {
-            img.toggle("md:mix-blend-darken", true);
-            img.toggle("md:mix-blend-lighten", false);
+            img.toggle("mix-blend-darken", true);
+            img.toggle("mix-blend-lighten", false);
           });
           str.toggle("mix-blend-darken", true);
           str.toggle("mix-blend-lighten", false);

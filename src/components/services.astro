@@ -41,9 +41,9 @@ const platforms: Array<CompatibilityItem> = [
 ---
 
 <ContentSection title="Services & Rates" id="Services">
-  <div class="grid grid-cols-3 md:gap-6 pb-6">
-    <div class="col-span-3 md:col-span-2">
-      <section class="font-quicksand text-2xl">
+  <div class="flex flex-col md:grid md:grid-cols-3 gap-6 pb-6"> <!---->
+    <div class="col-span-3 md:col-span-2"> <!---->
+      <section class="flex-auto w-full font-quicksand text-2xl">
         Our <span class="text-primary">100% teletherapy services</span> are currently
         offered on a private pay basis as we do not accept insurance at the moment. However,
         we are happy to provide detailed bills that you can submit for reimbursement
@@ -55,16 +55,17 @@ const platforms: Array<CompatibilityItem> = [
       </section>
     </div>
     <div id="serviceImg" class="
-     invisible
+     flex-auto
      inset-0
-     md:visible
-     md:max-w-full
-     md:min-h-full
+     max-w-full
+     min-h-full
+     bg-cover
+     bg-center
+     bg-no-repeat
+     bg-[url('/teleheaalth.png')]
+     h-80
+     w-auto
      md:col-span-1
-     md:bg-cover
-     md:bg-center
-     md:bg-no-repeat
-     md:bg-[url('/teleheaalth.png')]
      ">
     </div>
   </div>
@@ -73,18 +74,19 @@ const platforms: Array<CompatibilityItem> = [
     title="Professional Mental Health Services"
     cost={frameworks.values()}
   />
-  <div class="grid grid-cols-3 md:gap-6 pb-6">
+  <div class="flex flex-col md:grid md:grid-cols-3 gap-6 py-6">
     <div id="consultingImg" class="
-     invisible
+     flex auto
      inset-0
-     md:visible
-     md:max-w-full
-     md:min-h-full
+     max-w-full
+     min-h-full
+     bg-cover
+     bg-right-top
+     bg-no-repeat
+     bg-[url('/counseling.webp')]
+     h-80
+     w-auto
      md:col-span-1
-     md:bg-cover
-     md:bg-right
-     md:bg-no-repeat
-     md:bg-[url('/counseling.webp')]
      ">
     </div>
     <div class="col-span-3 md:col-span-2">
