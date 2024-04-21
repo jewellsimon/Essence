@@ -79,17 +79,20 @@ const description =
   const conImg = document.querySelector('#consultingImg').classList;
   const serImg = document.querySelector('#serviceImg').classList;
   const strImg = document.querySelector('#starfield').classList;
+  const intImg = document.querySelector('#introImg').classList;
 
   if (document.documentElement.dataset.theme === "dark"){
       bod.toggle("bg-dark");
       serImg.toggle("mix-blend-lighten");
       conImg.toggle("mix-blend-lighten");
       strImg.toggle("mix-blend-lighten");
+      intImg.toggle("mix-blend-lighten");
   }
   else{
     bod.toggle("bg-light");
     serImg.toggle("mix-blend-darken");//removed md for flex service images
     conImg.toggle("mix-blend-darken");
     strImg.toggle("mix-blend-darken");
+    intImg.toggle("mix-blend-darken");
   }
 </script>

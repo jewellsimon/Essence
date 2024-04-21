@@ -2,6 +2,7 @@
 import ContentSection from "~/components/content-section.astro";
 import {Image} from "astro:assets";
 import logo from "../assets/logos.png";
+import im from "../assets/essentxt.png"
 ---
 
 <ContentSection title="Essence of You" id="home">
@@ -21,8 +22,13 @@ import logo from "../assets/logos.png";
     resilience while increasing access to services in underserved populations. Our main priority
     is to <span class="text-primary">create a safe, inclusive, and empowering environment for clients
     to explore their experiences,gain insight, and develop strategies for positive change.</span>
-
   </Fragment>
+    <Image
+        id="introImg"
+        src={im}
+        loading="lazy"
+        alt="Hard times can be opportunities for growth. Use them as a chance to discover a new essence of strength and stability."
+    />
 
   <!--<div class="grid grid-cols-1 gap-2 sm:grid-cols-2">-->
   <!--  <a-->

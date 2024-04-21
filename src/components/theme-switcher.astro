@@ -53,7 +53,8 @@ import { Icon } from "astro-icon/components";
       const con = document.querySelector("#consultingImg").classList;
       const ser = document.querySelector("#serviceImg").classList;
       const str = document.querySelector('#starfield').classList;
-      const blendImages = [con,ser];
+      const inr = document.querySelector('#introImg').classList;
+      const blendImages = [con,ser,inr];
 
       if (document.documentElement.dataset.theme === "dark"){
           bod.toggle("bg-dark",true);
