@@ -3,8 +3,8 @@
   --color-secondary: theme("colors.indigo.500");
   --color-text: theme("colors.gray.900");
   --color-text-offset: theme("colors.gray.600");
-  --color-background: theme("colors.purple.200");
-  --color-background-offset: theme("colors.purple.100");
+  --color-background: theme("colors.purple.100");
+  --color-background-offset: theme("colors.purple.50");
   --color-border: theme("colors.purple.950" / 10%);
 }
 

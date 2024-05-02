@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
+import {Image} from "astro:assets";
+import violet from "../assets/essenceViolet.png";
+//import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
@@ -16,19 +18,25 @@ const navItems: Array<NavItem> = [
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-purple-600"
 >
 
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">EoY</h1>
-    <Icon name="mdi:letter-e-box-outline" class="size-10" />
+  <a class="flex items-center gap-2 hover:!text-default w-fit" href="#">
+    <h1 class="sr-only">Essence of You</h1>
+    <Image
+        class="max-w-16 filter-none"
+        src={violet}
+        loading="eager"
+        alt="an african violet"
+    />
+    <div class="flex items-center gap-6 font-quicksand text-primary">Essence Of You</div>
     <!--<Icon name="mdi:flower-outline" class="hidden h-10 sm:block" />-->
   </a>
   <div>
     <div class="flex items-center gap-6">
       <nav class="hidden sm:block">
-        <ul class="flex items-center gap-6">
+        <ul class="flex items-center gap-6 font-quicksand">
           {
             navItems.map(({ title, url }) => (
               <li>
-                <a class="text-sm" href={url}>
+                <a class="text-primary" href={url}>
                   {title}
                 </a>
               </li>
@@ -44,7 +52,7 @@ const navItems: Array<NavItem> = [
       >
         <Icon name="mdi:menu" class="size-8" />
       </button>
-      <ThemeSwitcher />
+      <!--<ThemeSwitcher />-->
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -60,7 +68,12 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="mdi:letter-e-box-outline" class="size-16" />
+            <Image
+                class="w-1/5 filter-none"
+                src={violet}
+                loading="eager"
+                alt="an african violet"
+            />
           </div>
           <nav>
             <ul class="flex flex-col">

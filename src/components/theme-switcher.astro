@@ -21,73 +21,73 @@ import { Icon } from "astro-icon/components";
   </span>
 </button>
 
-<script>
-  import invariant from "tiny-invariant";
+<!--<script>-->
+<!--  import invariant from "tiny-invariant";-->
 
-  const themes = ["light", "dark"];
-  const button = document.querySelector("#theme-switcher");
-  invariant(button, "button should not be null");
+<!--  const themes = ["light", "dark"];-->
+<!--  const button = document.querySelector("#theme-switcher");-->
+<!--  invariant(button, "button should not be null");-->
 
-  const getThemeCurrent = () => document.documentElement.dataset.theme;
-  const getThemeNext = () => {
-    const themeCurrent = getThemeCurrent();
-    invariant(themeCurrent, "themeCurrent should not be undefined");
-    const indexThemeCurrent = themes.indexOf(themeCurrent);
-    return themes[(indexThemeCurrent + 1) % themes.length];
-  };
+<!--  const getThemeCurrent = () => document.documentElement.dataset.theme;-->
+<!--  const getThemeNext = () => {-->
+<!--    const themeCurrent = getThemeCurrent();-->
+<!--    invariant(themeCurrent, "themeCurrent should not be undefined");-->
+<!--    const indexThemeCurrent = themes.indexOf(themeCurrent);-->
+<!--    return themes[(indexThemeCurrent + 1) % themes.length];-->
+<!--  };-->
 
-  const updateIcon = () => {
-    const themeCurrent = getThemeCurrent();
-    document
-      .querySelector(`#icon-theme-${themeCurrent}`)
-      ?.classList.add("hidden");
-    const themeNext = getThemeNext();
-    document
-      .querySelector(`#icon-theme-${themeNext}`)
-      ?.classList.remove("hidden");
-  };
+<!--  const updateIcon = () => {-->
+<!--    const themeCurrent = getThemeCurrent();-->
+<!--    document-->
+<!--      .querySelector(`#icon-theme-${themeCurrent}`)-->
+<!--      ?.classList.add("hidden");-->
+<!--    const themeNext = getThemeNext();-->
+<!--    document-->
+<!--      .querySelector(`#icon-theme-${themeNext}`)-->
+<!--      ?.classList.remove("hidden");-->
+<!--  };-->
 
-  const staticUpdate = ()=>{
-      //change theme static
-      const bod = document.body.classList;
-      const con = document.querySelector("#consultingImg").classList;
-      const ser = document.querySelector("#serviceImg").classList;
-      const str = document.querySelector('#starfield').classList;
-      const inr = document.querySelector('#introImg').classList;
-      const blendImages = [con,ser,inr];
+<!--  const staticUpdate = ()=>{-->
+<!--      //change theme static-->
+<!--      const bod = document.body.classList;-->
+<!--      const con = document.querySelector("#consultingImg").classList;-->
+<!--      const ser = document.querySelector("#serviceImg").classList;-->
+<!--      const str = document.querySelector('#starfield').classList;-->
+<!--      const inr = document.querySelector('#introImg').classList;-->
+<!--      const blendImages = [con,ser,inr];-->
 
-      if (document.documentElement.dataset.theme === "dark"){
-          bod.toggle("bg-dark",true);
-          bod.toggle("bg-light", false);
-          blendImages.forEach(img =>{
-            img.toggle("mix-blend-lighten",true);
-            img.toggle("mix-blend-darken",false);
-          });
-          str.toggle("mix-blend-lighten",true);
-          str.toggle("mix-blend-darken",false);
-          }
-      if (document.documentElement.dataset.theme === "light"){
-          bod.toggle("bg-dark", false);
-          bod.toggle("bg-light", true);
-          blendImages.forEach(img => {
-            img.toggle("mix-blend-darken", true);//removed md: due to flexbox
-            img.toggle("mix-blend-lighten", false);
-          });
-          str.toggle("mix-blend-darken", true);
-          str.toggle("mix-blend-lighten", false);
-          }
-      }
+<!--      if (document.documentElement.dataset.theme === "dark"){-->
+<!--          bod.toggle("bg-dark",true);-->
+<!--          bod.toggle("bg-light", false);-->
+<!--          blendImages.forEach(img =>{-->
+<!--            img.toggle("mix-blend-lighten",true);-->
+<!--            img.toggle("mix-blend-darken",false);-->
+<!--          });-->
+<!--          str.toggle("mix-blend-lighten",true);-->
+<!--          str.toggle("mix-blend-darken",false);-->
+<!--          }-->
+<!--      if (document.documentElement.dataset.theme === "light"){-->
+<!--          bod.toggle("bg-dark", false);-->
+<!--          bod.toggle("bg-light", true);-->
+<!--          blendImages.forEach(img => {-->
+<!--            img.toggle("mix-blend-darken", true);//removed md: due to flexbox-->
+<!--            img.toggle("mix-blend-lighten", false);-->
+<!--          });-->
+<!--          str.toggle("mix-blend-darken", true);-->
+<!--          str.toggle("mix-blend-lighten", false);-->
+<!--          }-->
+<!--      }-->
 
-  button.addEventListener("click", () => {
-    const themeNext = getThemeNext();
-    document.documentElement.dataset.theme = themeNext;
-    localStorage.setItem("theme", themeNext);
-    updateIcon();
-    staticUpdate();
-  });
+<!--  button.addEventListener("click", () => {-->
+<!--    const themeNext = getThemeNext();-->
+<!--    document.documentElement.dataset.theme = themeNext;-->
+<!--    localStorage.setItem("theme", themeNext);-->
+<!--    updateIcon();-->
+<!--    staticUpdate();-->
+<!--  });-->
 
-  updateIcon();
-</script>
+<!--  updateIcon();-->
+<!--</script>-->
 
 <style>
   :global(.fixed-header) #theme-switcher {
